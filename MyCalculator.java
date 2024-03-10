@@ -2,13 +2,13 @@ import java.util.Scanner;
 
 public class MyCalculator {
     public static void main(String[] args) {
-        calc();
-    }
-    static void calc(){
         Scanner sc = new Scanner(System.in);  //задается новое имя сканнера.Сканнер отправляет запрос/сигнал в терминал и ожидает ответа пользователя
         System.out.println("Введите значиние"); //приветствие для пользователя, чтобы пошла ответная реакция
         String line = sc.nextLine();
-        String [] values = line.split(" ");
+        calc(line);
+    }
+    static void calc(String input){
+        String [] values = input.split(" ");
         if (values.length != 3){
             throw new NumberFormatException("Нельзя вводить больше 2 значений");
         }
